@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="npI-s0-J7a">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Light.ttf">
+            <string>Roboto-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Gtn-8Y-T30">
+            <objects>
+                <navigationController id="npI-s0-J7a" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yqw-Vw-BVC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8hX-4v-gRc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kkr-BT-5O3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-690" y="179"/>
+        </scene>
+        <!--极光预测-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="aurora" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2eN-4R-WNB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载数据中..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRz-QW-j5A" customClass="UIVerticalAlignLabel" customModule="aurora" customModuleProvider="target">
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="极光预测数据每分钟自动更新" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-NK-5aP">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9EJ-nD-A0W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sRz-QW-j5A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="2UV-5C-jZK"/>
+                            <constraint firstAttribute="trailing" secondItem="sRz-QW-j5A" secondAttribute="trailing" constant="16" id="7m9-Yb-eAa"/>
+                            <constraint firstItem="2eN-4R-WNB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BPG-QO-mT2"/>
+                            <constraint firstAttribute="trailing" secondItem="2eN-4R-WNB" secondAttribute="trailing" id="M6s-bX-buI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2eN-4R-WNB" secondAttribute="bottom" id="ZvL-b2-72Q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pt2-NK-5aP" secondAttribute="bottom" constant="16" id="fAY-9e-nqc"/>
+                            <constraint firstItem="2eN-4R-WNB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ipN-Pv-lwC"/>
+                            <constraint firstItem="sRz-QW-j5A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="nOb-jg-94B"/>
+                            <constraint firstItem="sRz-QW-j5A" firstAttribute="bottom" secondItem="Pt2-NK-5aP" secondAttribute="top" constant="-16" id="oog-lQ-iGo"/>
+                            <constraint firstAttribute="trailing" secondItem="Pt2-NK-5aP" secondAttribute="trailing" constant="16" id="rrM-q5-CYN"/>
+                            <constraint firstItem="Pt2-NK-5aP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="s9y-JT-rlJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="极光预测" id="iu5-U0-0On">
+                        <barButtonItem key="leftBarButtonItem" title="提示" id="aNO-AT-LSa">
+                            <connections>
+                                <segue destination="KWt-MI-6F9" kind="show" id="GQf-PH-zDU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="2eN-4R-WNB" id="OWk-W2-j7B"/>
+                        <outlet property="forcastLabel" destination="sRz-QW-j5A" id="3AR-2W-YHv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="145" y="179"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4x7-Yk-F9s">
+            <objects>
+                <viewController id="KWt-MI-6F9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Uu-fd-pdu"/>
+                        <viewControllerLayoutGuide type="bottom" id="ftQ-kf-HFH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="brn-uS-wJg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chc-US-J4a" customClass="UIVerticalAlignLabel" customModule="aurora" customModuleProvider="target">
+                                <string key="text">Kp 缩写来源于德语中的“Planetarische Kennziffer”，而在英语中则表示为地磁指数。  Kp 数值是代表地磁强弱。数字从0到9，0代表非常微弱，而9则代表非常强。一般来说 Kp 5 可以定义为地磁暴。  作者是土生土长的广州人，目前在新西兰打工度假中。写这个应用，是希望在南半球能有机会看到极光！！！衷心希望你也喜欢我的这个作品。：）  你在 App Store 对该作品的评论，会促使我努力开发下一个版本噢！另外如果你有一些想法或者创意，欢迎写邮件给我。  作者：Aaron 郑富成 邮箱：fucheng.zheng@gmail.com 博客：www.sightcorner.com 公众号：whvapp</string>
+                                <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Chc-US-J4a" secondAttribute="trailing" constant="16" id="BRb-gr-GlW"/>
+                            <constraint firstItem="Chc-US-J4a" firstAttribute="leading" secondItem="brn-uS-wJg" secondAttribute="leading" constant="16" id="TmN-Wm-bdd"/>
+                            <constraint firstItem="ftQ-kf-HFH" firstAttribute="top" secondItem="Chc-US-J4a" secondAttribute="bottom" constant="16" id="mF0-fA-BUV"/>
+                            <constraint firstItem="Chc-US-J4a" firstAttribute="top" secondItem="5Uu-fd-pdu" secondAttribute="bottom" constant="16" id="pwH-Yr-bCf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Bc-NW-C95" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="179"/>
+        </scene>
+    </scenes>
+</document>

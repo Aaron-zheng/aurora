@@ -1,0 +1,389 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04606A04D8701ECC21ED1150 /* Pods_aurora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302193004C415F488B3407B8 /* Pods_aurora.framework */; };
+		A05F41F11E05FA44000BEAC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F41F01E05FA44000BEAC7 /* AppDelegate.swift */; };
+		A05F41F31E05FA44000BEAC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F41F21E05FA44000BEAC7 /* ViewController.swift */; };
+		A05F41F61E05FA44000BEAC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05F41F41E05FA44000BEAC7 /* Main.storyboard */; };
+		A05F41F81E05FA44000BEAC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A05F41F71E05FA44000BEAC7 /* Assets.xcassets */; };
+		A05F41FB1E05FA44000BEAC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05F41F91E05FA44000BEAC7 /* LaunchScreen.storyboard */; };
+		A05F42031E05FB30000BEAC7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F42021E05FB30000BEAC7 /* Constant.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0377FFD58F8C40D78DBCFEB7 /* Pods-aurora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aurora.release.xcconfig"; path = "Pods/Target Support Files/Pods-aurora/Pods-aurora.release.xcconfig"; sourceTree = "<group>"; };
+		302193004C415F488B3407B8 /* Pods_aurora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aurora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F3EC1BC9C8E309762981D8 /* Pods-aurora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aurora.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aurora/Pods-aurora.debug.xcconfig"; sourceTree = "<group>"; };
+		A05F41ED1E05FA44000BEAC7 /* aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A05F41F01E05FA44000BEAC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A05F41F21E05FA44000BEAC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A05F41F51E05FA44000BEAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A05F41F71E05FA44000BEAC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A05F41FA1E05FA44000BEAC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A05F41FC1E05FA44000BEAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A05F42021E05FB30000BEAC7 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A05F41EA1E05FA44000BEAC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04606A04D8701ECC21ED1150 /* Pods_aurora.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22B83733EF6B994714694AB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				302193004C415F488B3407B8 /* Pods_aurora.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6A86CE3C15D61D703CE67CA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96F3EC1BC9C8E309762981D8 /* Pods-aurora.debug.xcconfig */,
+				0377FFD58F8C40D78DBCFEB7 /* Pods-aurora.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A05F41E41E05FA44000BEAC7 = {
+			isa = PBXGroup;
+			children = (
+				A05F41EF1E05FA44000BEAC7 /* aurora */,
+				A05F41EE1E05FA44000BEAC7 /* Products */,
+				6A86CE3C15D61D703CE67CA7 /* Pods */,
+				22B83733EF6B994714694AB4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A05F41EE1E05FA44000BEAC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A05F41ED1E05FA44000BEAC7 /* aurora.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A05F41EF1E05FA44000BEAC7 /* aurora */ = {
+			isa = PBXGroup;
+			children = (
+				A05F42021E05FB30000BEAC7 /* Constant.swift */,
+				A05F41F01E05FA44000BEAC7 /* AppDelegate.swift */,
+				A05F41F21E05FA44000BEAC7 /* ViewController.swift */,
+				A05F41F41E05FA44000BEAC7 /* Main.storyboard */,
+				A05F41F71E05FA44000BEAC7 /* Assets.xcassets */,
+				A05F41F91E05FA44000BEAC7 /* LaunchScreen.storyboard */,
+				A05F41FC1E05FA44000BEAC7 /* Info.plist */,
+			);
+			path = aurora;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A05F41EC1E05FA44000BEAC7 /* aurora */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A05F41FF1E05FA44000BEAC7 /* Build configuration list for PBXNativeTarget "aurora" */;
+			buildPhases = (
+				DA329EBE43AF0EB8BA35A722 /* [CP] Check Pods Manifest.lock */,
+				A05F41E91E05FA44000BEAC7 /* Sources */,
+				A05F41EA1E05FA44000BEAC7 /* Frameworks */,
+				A05F41EB1E05FA44000BEAC7 /* Resources */,
+				971A47C25FFA0F221767F442 /* [CP] Embed Pods Frameworks */,
+				08540E94887EB6DB288553DE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = aurora;
+			productName = aurora;
+			productReference = A05F41ED1E05FA44000BEAC7 /* aurora.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A05F41E51E05FA44000BEAC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = sightcorner;
+				TargetAttributes = {
+					A05F41EC1E05FA44000BEAC7 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = LW783GQGY7;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A05F41E81E05FA44000BEAC7 /* Build configuration list for PBXProject "aurora" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A05F41E41E05FA44000BEAC7;
+			productRefGroup = A05F41EE1E05FA44000BEAC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A05F41EC1E05FA44000BEAC7 /* aurora */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A05F41EB1E05FA44000BEAC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A05F41FB1E05FA44000BEAC7 /* LaunchScreen.storyboard in Resources */,
+				A05F41F81E05FA44000BEAC7 /* Assets.xcassets in Resources */,
+				A05F41F61E05FA44000BEAC7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08540E94887EB6DB288553DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-aurora/Pods-aurora-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		971A47C25FFA0F221767F442 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-aurora/Pods-aurora-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA329EBE43AF0EB8BA35A722 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A05F41E91E05FA44000BEAC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A05F41F31E05FA44000BEAC7 /* ViewController.swift in Sources */,
+				A05F41F11E05FA44000BEAC7 /* AppDelegate.swift in Sources */,
+				A05F42031E05FB30000BEAC7 /* Constant.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A05F41F41E05FA44000BEAC7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A05F41F51E05FA44000BEAC7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A05F41F91E05FA44000BEAC7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A05F41FA1E05FA44000BEAC7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A05F41FD1E05FA44000BEAC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A05F41FE1E05FA44000BEAC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A05F42001E05FA44000BEAC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96F3EC1BC9C8E309762981D8 /* Pods-aurora.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = aurora/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.aurora;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		A05F42011E05FA44000BEAC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0377FFD58F8C40D78DBCFEB7 /* Pods-aurora.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LW783GQGY7;
+				INFOPLIST_FILE = aurora/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.aurora;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A05F41E81E05FA44000BEAC7 /* Build configuration list for PBXProject "aurora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A05F41FD1E05FA44000BEAC7 /* Debug */,
+				A05F41FE1E05FA44000BEAC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A05F41FF1E05FA44000BEAC7 /* Build configuration list for PBXNativeTarget "aurora" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A05F42001E05FA44000BEAC7 /* Debug */,
+				A05F42011E05FA44000BEAC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A05F41E51E05FA44000BEAC7 /* Project object */;
+}
