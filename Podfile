@@ -4,8 +4,10 @@
 target 'aurora' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  
 
   # Pods for auroa
+  #pod 'Kanna', '~> 2.1.0'
   pod 'Alamofire', '~> 4.0'
-  pod 'Kanna', '~> 2.1.0'
+  pod 'Kingfisher', '~> 3.0'
 end

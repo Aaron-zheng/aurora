@@ -1,15 +1,15 @@
 PODS:
   - Alamofire (4.2.0)
-  - Kanna (2.1.1)
+  - Kingfisher (3.6.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
-  - Kanna (~> 2.1.0)
+  - Kingfisher (~> 3.0)
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
-  Kanna: 9b4b086c218703f2b94f5b21a466217dd2f9332e
+  Kingfisher: 2c94e72c6830622c71d06adf4ea024c37d316830
 
-PODFILE CHECKSUM: 17890f820dc8420f043845b4717539512d99dece
+PODFILE CHECKSUM: 2e9516700942f44796240c89aa1b45901866cf46
 
 COCOAPODS: 1.1.1

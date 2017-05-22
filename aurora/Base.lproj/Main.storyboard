@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="npI-s0-J7a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="npI-s0-J7a">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,86 +25,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8hX-4v-gRc"/>
+                        <segue destination="5mK-f4-9kJ" kind="relationship" relationship="rootViewController" id="YVk-1x-hCQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkr-BT-5O3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-690" y="179"/>
+            <point key="canvasLocation" x="-1193" y="105"/>
         </scene>
-        <!--极光预测-->
-        <scene sceneID="tne-QT-ifu">
+        <!--信息-->
+        <scene sceneID="eQ8-ex-b0V">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="aurora" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="w6h-tU-jle" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="pnX-ZX-kZL"/>
+                        <viewControllerLayoutGuide type="bottom" id="WtE-Nm-cir"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2eN-4R-WNB"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="加载数据中..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRz-QW-j5A" customClass="UIVerticalAlignLabel" customModule="aurora" customModuleProvider="target">
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="极光预测数据每分钟自动更新" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pt2-NK-5aP">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="9EJ-nD-A0W"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="sRz-QW-j5A" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="2UV-5C-jZK"/>
-                            <constraint firstAttribute="trailing" secondItem="sRz-QW-j5A" secondAttribute="trailing" constant="16" id="7m9-Yb-eAa"/>
-                            <constraint firstItem="2eN-4R-WNB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BPG-QO-mT2"/>
-                            <constraint firstAttribute="trailing" secondItem="2eN-4R-WNB" secondAttribute="trailing" id="M6s-bX-buI"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2eN-4R-WNB" secondAttribute="bottom" id="ZvL-b2-72Q"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pt2-NK-5aP" secondAttribute="bottom" constant="16" id="fAY-9e-nqc"/>
-                            <constraint firstItem="2eN-4R-WNB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ipN-Pv-lwC"/>
-                            <constraint firstItem="sRz-QW-j5A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="nOb-jg-94B"/>
-                            <constraint firstItem="sRz-QW-j5A" firstAttribute="bottom" secondItem="Pt2-NK-5aP" secondAttribute="top" constant="-16" id="oog-lQ-iGo"/>
-                            <constraint firstAttribute="trailing" secondItem="Pt2-NK-5aP" secondAttribute="trailing" constant="16" id="rrM-q5-CYN"/>
-                            <constraint firstItem="Pt2-NK-5aP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="s9y-JT-rlJ"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="极光预测" id="iu5-U0-0On">
-                        <barButtonItem key="leftBarButtonItem" title="提示" id="aNO-AT-LSa">
-                            <connections>
-                                <segue destination="KWt-MI-6F9" kind="show" id="GQf-PH-zDU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="backgroundImageView" destination="2eN-4R-WNB" id="OWk-W2-j7B"/>
-                        <outlet property="forcastLabel" destination="sRz-QW-j5A" id="3AR-2W-YHv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="145" y="179"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="4x7-Yk-F9s">
-            <objects>
-                <viewController id="KWt-MI-6F9" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5Uu-fd-pdu"/>
-                        <viewControllerLayoutGuide type="bottom" id="ftQ-kf-HFH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="brn-uS-wJg">
+                    <view key="view" contentMode="scaleToFill" id="7GR-zb-02E">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chc-US-J4a" customClass="UIVerticalAlignLabel" customModule="aurora" customModuleProvider="target">
-                                <string key="text">Kp 缩写来源于德语中的“Planetarische Kennziffer”，而在英语中则表示为地磁指数。  Kp 数值是代表地磁强弱。数字从0到9，0代表非常微弱，而9则代表非常强。一般来说 Kp 5 可以定义为地磁暴。  作者是土生土长的广州人，目前在新西兰打工度假中。写这个应用，是希望在南半球能有机会看到极光！！！衷心希望你也喜欢我的这个作品。：）  你在 App Store 对该作品的评论，会促使我努力开发下一个版本噢！另外如果你有一些想法或者创意，欢迎写邮件给我。  作者：Aaron 郑富成 邮箱：fucheng.zheng@gmail.com 博客：www.sightcorner.com 公众号：whvapp</string>
+                                <rect key="frame" x="16" y="80" width="343" height="522"/>
+                                <mutableString key="text">"实时"只展现，5分钟内可能出现极光的地区。（预测概率等于0的暂不显示，目前将会计算5分钟内244个地区的极光预测）  目前本作品应用了新的算法，之前的极光计算是按照地球收到的地磁指数来计算的，但是不同国家和地区的实际感受到的影响均是不同的，所以目前应用了新的算法来实现，不过目前这个算法还是测试版本，还会继续改进的。  作者是土生土长的广州人，曾经在新西兰打工度假中。  你在 App Store 对该作品的评论，会促使我努力开发下一个版本噢！另外如果你有一些想法或者创意，欢迎写邮件给我。  作者：Aaron 郑富成 邮箱：fucheng.zheng@gmail.com 博客：www.sightcorner.com 公众号：whvapp</mutableString>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -107,16 +54,199 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Chc-US-J4a" secondAttribute="trailing" constant="16" id="BRb-gr-GlW"/>
-                            <constraint firstItem="Chc-US-J4a" firstAttribute="leading" secondItem="brn-uS-wJg" secondAttribute="leading" constant="16" id="TmN-Wm-bdd"/>
-                            <constraint firstItem="ftQ-kf-HFH" firstAttribute="top" secondItem="Chc-US-J4a" secondAttribute="bottom" constant="16" id="mF0-fA-BUV"/>
-                            <constraint firstItem="Chc-US-J4a" firstAttribute="top" secondItem="5Uu-fd-pdu" secondAttribute="bottom" constant="16" id="pwH-Yr-bCf"/>
+                            <constraint firstItem="Chc-US-J4a" firstAttribute="leading" secondItem="7GR-zb-02E" secondAttribute="leading" constant="16" id="Pe6-jW-sc6"/>
+                            <constraint firstItem="WtE-Nm-cir" firstAttribute="top" secondItem="Chc-US-J4a" secondAttribute="bottom" constant="16" id="RIg-kQ-bJh"/>
+                            <constraint firstAttribute="trailing" secondItem="Chc-US-J4a" secondAttribute="trailing" constant="16" id="caL-W3-f4J"/>
+                            <constraint firstItem="Chc-US-J4a" firstAttribute="top" secondItem="pnX-ZX-kZL" secondAttribute="bottom" constant="16" id="iCE-A5-y7B"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="信息" image="ic_assistant_white_36pt" id="daQ-RE-C3v"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5Bc-NW-C95" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C33-6u-f1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="179"/>
+            <point key="canvasLocation" x="-124" y="963"/>
+        </scene>
+        <!--图像-->
+        <scene sceneID="rG0-H9-hzw">
+            <objects>
+                <viewController id="F3w-OI-Nb7" customClass="PictureViewController" customModule="aurora" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z8j-ax-haa"/>
+                        <viewControllerLayoutGuide type="bottom" id="NJB-eH-R4m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fze-xS-fVC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2c4-bS-prv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aDs-Qh-ML1">
+                                        <rect key="frame" x="0.0" y="16" width="375" height="375"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="aDs-Qh-ML1" secondAttribute="height" multiplier="1:1" id="gUC-0t-vzH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.53000000000000003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北半球极光能见度范围" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU3-wW-Uq1">
+                                        <rect key="frame" x="8" y="395" width="359" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="51N-k9-ZV2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Qb-sj-DHg">
+                                        <rect key="frame" x="0.0" y="423" width="375" height="375"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="3Qb-sj-DHg" secondAttribute="height" multiplier="1:1" id="lRu-Y0-teY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南半球极光能见度范围" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mu1-b0-1SR">
+                                        <rect key="frame" x="8" y="802" width="359" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="3XW-tG-Xc8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="aDs-Qh-ML1" firstAttribute="top" secondItem="2c4-bS-prv" secondAttribute="top" constant="16" id="2XM-Qf-l9V"/>
+                                    <constraint firstItem="Mu1-b0-1SR" firstAttribute="top" secondItem="3Qb-sj-DHg" secondAttribute="bottom" constant="4" id="4cg-wO-4I0"/>
+                                    <constraint firstItem="3Qb-sj-DHg" firstAttribute="top" secondItem="aDs-Qh-ML1" secondAttribute="bottom" constant="32" id="7Mx-iy-iM9"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Qb-sj-DHg" secondAttribute="bottom" constant="32" id="7gb-Fj-YXY"/>
+                                    <constraint firstItem="aDs-Qh-ML1" firstAttribute="leading" secondItem="2c4-bS-prv" secondAttribute="leading" id="8sW-ug-Isx"/>
+                                    <constraint firstItem="aU3-wW-Uq1" firstAttribute="top" secondItem="aDs-Qh-ML1" secondAttribute="bottom" constant="4" id="CRi-dW-25j"/>
+                                    <constraint firstItem="3Qb-sj-DHg" firstAttribute="width" secondItem="2c4-bS-prv" secondAttribute="width" id="Fbf-rW-L9w"/>
+                                    <constraint firstItem="Mu1-b0-1SR" firstAttribute="leading" secondItem="2c4-bS-prv" secondAttribute="leading" constant="8" id="KzX-GP-BbN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mu1-b0-1SR" secondAttribute="trailing" constant="8" id="YjN-2E-RXL"/>
+                                    <constraint firstItem="aDs-Qh-ML1" firstAttribute="width" secondItem="2c4-bS-prv" secondAttribute="width" id="Yq9-5Y-mFS"/>
+                                    <constraint firstAttribute="trailing" secondItem="aU3-wW-Uq1" secondAttribute="trailing" constant="8" id="jbL-0x-JlX"/>
+                                    <constraint firstItem="3Qb-sj-DHg" firstAttribute="leading" secondItem="2c4-bS-prv" secondAttribute="leading" id="qTd-2l-YbK"/>
+                                    <constraint firstAttribute="trailing" secondItem="3Qb-sj-DHg" secondAttribute="trailing" id="reP-EF-AFh"/>
+                                    <constraint firstItem="aU3-wW-Uq1" firstAttribute="leading" secondItem="2c4-bS-prv" secondAttribute="leading" constant="8" id="xIa-jn-PvX"/>
+                                    <constraint firstAttribute="trailing" secondItem="aDs-Qh-ML1" secondAttribute="trailing" id="zaz-w7-NmY"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2c4-bS-prv" firstAttribute="leading" secondItem="fze-xS-fVC" secondAttribute="leading" id="OfT-pi-ton"/>
+                            <constraint firstItem="NJB-eH-R4m" firstAttribute="top" secondItem="2c4-bS-prv" secondAttribute="bottom" id="Xa3-AL-JaJ"/>
+                            <constraint firstAttribute="trailing" secondItem="2c4-bS-prv" secondAttribute="trailing" id="a3j-pS-i6y"/>
+                            <constraint firstItem="2c4-bS-prv" firstAttribute="top" secondItem="fze-xS-fVC" secondAttribute="top" id="quJ-Zl-GQP"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="图像" image="ic_broken_image_white_36pt" id="R95-zo-KFq"/>
+                    <connections>
+                        <outlet property="northImageView" destination="aDs-Qh-ML1" id="Jeb-RT-kj3"/>
+                        <outlet property="southImageView" destination="3Qb-sj-DHg" id="0rg-ci-w01"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4TP-Vl-ftA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="797.60000000000002" y="634.632683658171"/>
+        </scene>
+        <!--实时-->
+        <scene sceneID="9Mt-du-Qlh">
+            <objects>
+                <viewController id="yM7-Xy-gTU" customClass="ViewController" customModule="aurora" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M46-FM-yXy"/>
+                        <viewControllerLayoutGuide type="bottom" id="uD9-DY-lQe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Dx-bb-U8v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mcq-S1-OjO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="forcastTableViewCell" id="4QM-KP-uEL" customClass="ForcastTableViewCell" customModule="aurora" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="48"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4QM-KP-uEL" id="cvQ-Dg-fe2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.82999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="国家名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acB-ki-CNa">
+                                                    <rect key="frame" x="16" y="8" width="343" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="几率" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EoZ-Pc-8GX">
+                                                    <rect key="frame" x="8" y="8" width="351" height="31"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EoZ-Pc-8GX" firstAttribute="leading" secondItem="cvQ-Dg-fe2" secondAttribute="leading" constant="8" id="1x1-NI-AqA"/>
+                                                <constraint firstAttribute="bottom" secondItem="acB-ki-CNa" secondAttribute="bottom" constant="8" id="NbS-Pg-54J"/>
+                                                <constraint firstItem="acB-ki-CNa" firstAttribute="top" secondItem="cvQ-Dg-fe2" secondAttribute="top" constant="8" id="VB0-qT-xOB"/>
+                                                <constraint firstItem="EoZ-Pc-8GX" firstAttribute="top" secondItem="cvQ-Dg-fe2" secondAttribute="top" constant="8" id="dZ1-0T-7Uv"/>
+                                                <constraint firstAttribute="trailing" secondItem="EoZ-Pc-8GX" secondAttribute="trailing" constant="16" id="nhR-hc-vZ2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="acB-ki-CNa" secondAttribute="trailing" constant="8" id="onX-IZ-gUO"/>
+                                                <constraint firstItem="acB-ki-CNa" firstAttribute="leading" secondItem="cvQ-Dg-fe2" secondAttribute="leading" constant="16" id="q4I-eL-MrO"/>
+                                                <constraint firstAttribute="bottom" secondItem="EoZ-Pc-8GX" secondAttribute="bottom" constant="8" id="yWz-mm-hw7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="countryLabel" destination="acB-ki-CNa" id="al7-fu-bmC"/>
+                                            <outlet property="possibility" destination="EoZ-Pc-8GX" id="ypZ-zM-dYX"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uD9-DY-lQe" firstAttribute="top" secondItem="mcq-S1-OjO" secondAttribute="bottom" id="dg5-Tg-k14"/>
+                            <constraint firstItem="mcq-S1-OjO" firstAttribute="top" secondItem="M46-FM-yXy" secondAttribute="bottom" constant="-64" id="jZr-11-ovL"/>
+                            <constraint firstAttribute="trailing" secondItem="mcq-S1-OjO" secondAttribute="trailing" id="kJF-EG-5BL"/>
+                            <constraint firstItem="mcq-S1-OjO" firstAttribute="leading" secondItem="9Dx-bb-U8v" secondAttribute="leading" id="z2M-W6-2XX"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="实时" image="ic_access_time_white_36pt" id="QHb-x0-HLd"/>
+                    <connections>
+                        <outlet property="tableView" destination="mcq-S1-OjO" id="8mW-1n-4qg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PDE-nZ-04Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="763.5" y="-114.5"/>
+        </scene>
+        <!--极光预测-->
+        <scene sceneID="UGm-hj-7ie">
+            <objects>
+                <tabBarController id="5mK-f4-9kJ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="极光预测" id="dHV-Gy-bJj"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="ydY-vA-yi2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="yM7-Xy-gTU" kind="relationship" relationship="viewControllers" id="kKH-sL-puU"/>
+                        <segue destination="F3w-OI-Nb7" kind="relationship" relationship="viewControllers" id="Wbh-LT-diP"/>
+                        <segue destination="w6h-tU-jle" kind="relationship" relationship="viewControllers" id="hEq-2d-S00"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0l-6V-QGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-372" y="105"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_access_time_white_36pt" width="36" height="36"/>
+        <image name="ic_assistant_white_36pt" width="36" height="36"/>
+        <image name="ic_broken_image_white_36pt" width="36" height="36"/>
+    </resources>
 </document>

@@ -8,18 +8,22 @@
 
 import UIKit
 import Alamofire
-import Kanna
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var forcastLabel: UIVerticalAlignLabel!
+    @IBOutlet weak var tableView: UITableView!
+    var data = Array<Forcast>()
+    var countrys = Array<Country>()
+    var dataSourceForTableView = Array<Country>()
     
-    private let auroaURL = "http://www.aurora-service.net/aurora-forecast/"
-
+    fileprivate var currentNodeName: String!
+    fileprivate var country: Country!
+    fileprivate var tdIndex: Int! = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         setup()
         setupData()
         
@@ -32,8 +36,21 @@ class ViewController: UIViewController {
     }
     
     func setupData() {
+//        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(ViewController.requestAuroa), userInfo: nil, repeats: true)
+        let xmlParser = XMLParser(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "data", ofType: "xml")!))
+        xmlParser?.delegate = self
+        xmlParser?.parse()
+        
         requestAuroa()
-        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(ViewController.requestAuroa), userInfo: nil, repeats: true)
+        
+        let country = Country();
+        country.name = "数据加载中..."
+        country.possibility = "极光概率"
+        self.dataSourceForTableView.append(country)
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
     }
     
     private func blur(background: UIView) {
@@ -49,126 +66,211 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func changeBackground() {
-        backgroundImageView.image = UIImage(named: "background" + arc4random_uniform(4).description)
-    }
+    
     
     func requestAuroa() {
-        changeBackground()
-        
-        forcastLabel.text = "加载数据中..."
         
         Alamofire.request(auroaURL).validate().response { (response) in
+            
+            self.dataSourceForTableView.removeAll()
             
             if response.error == nil {
                 self.performSuccessHandling(data: response.data)
             } else {
                 self.performUnsuccessHandling()
             }
+            
+            self.cal()
+            print(self.countrys.count.description)
+            for each in self.countrys {
+                
+                let possibility = self.getPosibilityOfAurora(latitude: NSDecimalNumber.init(string: each.latitude), longitude: NSDecimalNumber.init(string: each.longitude))
+                let p = NSDecimalNumber.init(string: possibility)
+                if p != 0 {
+                    each.possibility = possibility
+                    self.dataSourceForTableView.append(each)
+                    print(each.name + " " + possibility)
+                }
+            }
+            
+            self.tableView.reloadData()
         }
     }
     
     func performSuccessHandling(data: Data?) {
         if let data = data {
             let html = String(data: data, encoding: String.Encoding.utf8)!
-            let forcastArray = parseHtml(html: html)
-            var text: String = ""
-            
-
-            
-            text = text + "实时的 极光预测值为：" + kpDescription(kp: forcastArray[0].kp) + "\n\n\n"
-            
-            
-            text = text + "明天的 极光预测值为：" + kpDescription(kp: forcastArray[1].kp) + "\n\n"
-            
-            
-            text = text + "后天的 极光预测值为：" + kpDescription(kp: forcastArray[2].kp) + "\n\n"
-            
-            
-            
-            
-            forcastLabel.text = text
+            parseHtml(html: html)
         }
     }
     
-    func kpDescription(kp: Float) -> String{
-        var description: String = "Kp " + kp.description
-        
-        if kp < 4 {
-            description = description + "（低）"
-        } else if kp > 5 {
-            description = description + "（高）"
-        } else {
-            description = description + "（中）"
+    
+    func getPosibilityOfAurora(latitude: NSDecimalNumber, longitude: NSDecimalNumber) -> String{
+        var result: Forcast!
+        for each in data {
+            if each.latitude.compare(latitude) == ComparisonResult.orderedAscending {
+                result = each
+            } else {
+                break
+            }
         }
         
-        return description
+        let longitudes = matches(for: "([0-9]+)", in: result.longitudes)
+        var possibility: String! = ""
+        let per = NSDecimalNumber.init(value: 360).dividing(by: NSDecimalNumber.init(value: longitudes.count))
+        var calculatedLongitude: NSDecimalNumber!
+        for i in 1 ... longitudes.count {
+            calculatedLongitude = NSDecimalNumber.init(value: i).multiplying(by: per).subtracting(NSDecimalNumber.init(value: 180))
+            
+            if calculatedLongitude.compare(longitude) == ComparisonResult.orderedAscending {
+                possibility = longitudes[i-1]
+            } else {
+                break
+            }
+        }
+        
+        return possibility
     }
+    
     
     func performUnsuccessHandling() {
         
     }
     
-    func parseHtml(html: String) -> Array<Forcast> {
-        let currentXPath = "//div[@class='transtab']//h4//span"
-        //let minuteXPath = "//div[@class='transtab']//h5//span"
-        let dayXPath = "//div[@class='transtab']//pre//p//strong"
-        var forcastArray = Array<Forcast>()
-        
-        if let html = HTML(html: html, encoding: .utf8) {
-            //current
-            
-            forcastArray.append(Forcast(kp: toFloat(str: html.xpath(currentXPath).first!.text!), time: 0, type: .minute))
-            
-            
-            let str = html.xpath(dayXPath).first!.text!
-            let array = str.components(separatedBy: "        ")
-            
-            
-            forcastArray.append(Forcast(kp: toFloat(str: array[2]), time: toInt(str: "1"), type: .minute))
-            forcastArray.append(Forcast(kp: toFloat(str: array[3]), time: toInt(str: "2"), type: .minute))
-            
-            //
-            /*
-            let minutePath = html.xpath(minuteXPath)
-            forcastArray.append(Forcast(kp: toFloat(str: minutePath[1].text!), time: toInt(str: minutePath[0].text!), type: .minute))
-            forcastArray.append(Forcast(kp: toFloat(str: minutePath[3].text!), time: toInt(str: minutePath[2].text!), type: .minute))
-            forcastArray.append(Forcast(kp: toFloat(str: minutePath[5].text!), time: toInt(str: minutePath[4].text!), type: .minute))
-            */
-            
-            
-            for node in forcastArray {
-                print(node.kp.description + " " + node.time.description)
+    func cal() {
+        var result: NSDecimalNumber = 0
+        var lat: NSDecimalNumber = 0
+        var log: NSDecimalNumber = 0
+        for each in data {
+            let longitudes = matches(for: "([0-9]+)", in: each.longitudes)
+            for i in 1 ... longitudes.count {
+                if result.compare(NSDecimalNumber.init(string: longitudes[i-1].trimmingCharacters(in: .whitespacesAndNewlines))) == ComparisonResult.orderedAscending {
+                    
+                    lat = each.latitude
+                    log = NSDecimalNumber.init(value: 0.3515625).multiplying(by: NSDecimalNumber.init(value: (i - 1))).subtracting(NSDecimalNumber.init(value: 180))
+                    
+                    result = NSDecimalNumber.init(string: longitudes[i-1].trimmingCharacters(in: .whitespacesAndNewlines))
+                }
             }
         }
+        let possibility = Int(result)
+        let country = Country()
+        country.name = lat.description + ", " + log.description
+        country.possibility = possibility.description
+        self.dataSourceForTableView.append(country)
+        print("max: " + possibility.description + " " + lat.description + " " + log.description)
+    }
+    
+    
+    //1024 values covering 0 to 360 degrees in the horizontal (longitude) direction  (0.32846715 degrees/value)
+    //512 values covering -90 to 90 degrees in the vertical (latitude) direction  (0.3515625 degrees/value)
+    //Values range from 0 (little or no probability of visible aurora) to 100 (high probability of visible aurora)
+    func parseHtml(html: String) {
         
-        return forcastArray
+        
+        let array = html.components(separatedBy: "\n")
+        var count = 0
+        for each in array {
+            if each.range(of: "#") == nil {
+                
+                let longtitude = each.trimmingCharacters(in: .whitespacesAndNewlines)
+                
+                if longtitude.lengthOfBytes(using: String.Encoding.utf8) > 0 {
+                
+                    count = count + 1
+                    data.append(Forcast(count, longtitude))
+                }
+                
+            }
+        }
     }
     
-    func toFloat(str: String) -> Float {
-        let tmp = str.lowercased().replacingOccurrences(of: "kp", with: "").replacingOccurrences(of: "-", with: "").trimmingCharacters(in: .whitespacesAndNewlines) as NSString
-        return tmp.floatValue
+    class Forcast {
+        //start from 1~512, total 512
+        var latitudeIndex: Int! = 0
+        var latitude: NSDecimalNumber! = 0
+        var longitudes: String! = ""
+        
+        init(_ latitudeIndex: Int, _ longitudes: String) {
+            self.latitudeIndex = latitudeIndex
+            self.longitudes = longitudes
+            self.latitude = NSDecimalNumber.init(value: latitudeIndex).multiplying(by: NSDecimalNumber.init(value: 0.3515625)).subtracting(NSDecimalNumber.init(value: 90))
+        }
     }
-    func toInt(str: String) -> Int {
-        let tmp = str.lowercased().replacingOccurrences(of: "kp", with: "").trimmingCharacters(in: .whitespacesAndNewlines) as NSString
-        return tmp.integerValue
+    
+}
+
+
+extension ViewController: UITableViewDelegate {
+    
+}
+
+extension ViewController: UITableViewDataSource {
+    
+    
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSourceForTableView.count
+    }
+    
+    @available(iOS 2.0, *)
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "forcastTableViewCell", for: indexPath) as! ForcastTableViewCell
+        cell.prepare(country: dataSourceForTableView[indexPath.row].name,
+                     possibility: dataSourceForTableView[indexPath.row].possibility + "%")
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+}
+
+
+extension ViewController: XMLParserDelegate {
+    
+    
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
+        
+        currentNodeName = elementName
+        if currentNodeName == "tr" {
+            country = Country()
+            tdIndex = 0
+        }
+    }
+    
+    func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
+        
+        if elementName == "tr" {
+            countrys.append(country)
+            tdIndex = 0
+        }
+        
+    }
+    
+    
+    func parser(_ parser: XMLParser, foundCharacters string: String) {
+        let str = string.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        if str.isEmpty {
+            return
+        }
+        
+        switch currentNodeName {
+        case "td":
+            tdIndex = tdIndex + 1
+            if tdIndex == 1 {
+                country.code = str
+            } else if tdIndex == 2 {
+                country.latitude = str
+            } else if tdIndex == 3 {
+                country.longitude = str
+            } else if tdIndex >= 4 {
+                country.name = country.name + str
+            }
+        default:
+            break
+        }
     }
 }
 
-class Forcast {
-    var kp: Float! = 0
-    var time: Int! = 0
-    var type: ForcastType!
-    
-    init(kp: Float, time: Int, type: ForcastType) {
-        self.kp = kp
-        self.time = time
-        self.type = type
-    }
-    
-}
-
-enum ForcastType {
-    case minute
-    case date
-}
