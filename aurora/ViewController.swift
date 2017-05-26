@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var data = Array<Forcast>()
     var countrys = Array<Country>()
     var dataSourceForTableView = Array<Country>()
+    var codeDict = Dictionary<String, String>()
     
     fileprivate var currentNodeName: String!
     fileprivate var country: Country!
@@ -35,7 +36,36 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
+    
+    private func readCode() {
+        
+        if FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first != nil {
+            
+            do {
+                let text = try String(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "code", ofType: "txt")!), encoding: String.Encoding.utf8)
+                
+                let lines = text.components(separatedBy: "\n")
+                for line in lines {
+                    if line.lengthOfBytes(using: .utf8) <= 0 {
+                        continue
+                    }
+                    let nameAndCode = line.components(separatedBy: "\t")
+                    codeDict[nameAndCode[1]] = nameAndCode[0]
+                }
+//                print(codeDict)
+                
+            } catch {
+                print("Error info: \(error)")
+            }
+            
+            
+        }
+    }
+    
     func setupData() {
+        readCode()
 //        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(ViewController.requestAuroa), userInfo: nil, repeats: true)
         let xmlParser = XMLParser(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "data", ofType: "xml")!))
         xmlParser?.delegate = self
@@ -85,14 +115,23 @@ class ViewController: UIViewController {
             for each in self.countrys {
                 
                 let possibility = self.getPosibilityOfAurora(latitude: NSDecimalNumber.init(string: each.latitude), longitude: NSDecimalNumber.init(string: each.longitude))
-                let p = NSDecimalNumber.init(string: possibility)
-                if p != 0 {
-                    each.possibility = possibility
-                    self.dataSourceForTableView.append(each)
-                    print(each.name + " " + possibility)
+//              let p = NSDecimalNumber.init(string: possibility)
+                each.possibility = possibility
+                if let chineseName = self.codeDict[each.code] {
+                    each.name = chineseName
                 }
+                
+                self.dataSourceForTableView.append(each)
             }
-            
+            self.dataSourceForTableView.sort(by: { (c1, c2) -> Bool in
+                if c1.name == "5分钟实时预测" {
+                    return true
+                } else if c2.name == "5分钟实时预测" {
+                    return false
+                }
+                
+                return Int.init(c1.possibility)! > Int.init(c2.possibility)!
+            })
             self.tableView.reloadData()
         }
     }
@@ -154,8 +193,12 @@ class ViewController: UIViewController {
             }
         }
         let possibility = Int(result)
+        let display = Country()
+        display.name = "5分钟实时预测"
+        display.possibility = "极光概率"
+        self.dataSourceForTableView.append(display)
         let country = Country()
-        country.name = lat.description + ", " + log.description
+        country.name = "最大概率（" + lat.description + ", " + log.description + "）"
         country.possibility = possibility.description
         self.dataSourceForTableView.append(country)
         print("max: " + possibility.description + " " + lat.description + " " + log.description)

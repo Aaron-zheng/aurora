@@ -18,6 +18,7 @@
 		A05F41FB1E05FA44000BEAC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A05F41F91E05FA44000BEAC7 /* LaunchScreen.storyboard */; };
 		A05F42031E05FB30000BEAC7 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F42021E05FB30000BEAC7 /* Constant.swift */; };
 		A09220811ED3246400837890 /* ForcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09220801ED3246400837890 /* ForcastTableViewCell.swift */; };
+		A0E97B521ED87FA000957218 /* code.txt in Resources */ = {isa = PBXBuildFile; fileRef = A0E97B511ED87FA000957218 /* code.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A05F41FC1E05FA44000BEAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A05F42021E05FB30000BEAC7 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		A09220801ED3246400837890 /* ForcastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForcastTableViewCell.swift; sourceTree = "<group>"; };
+		A0E97B511ED87FA000957218 /* code.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = code.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				A03C9AAC1EC8ABA100C2227A /* data.xml */,
+				A0E97B511ED87FA000957218 /* code.txt */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				A03C9AAD1EC8ABA100C2227A /* data.xml in Resources */,
 				A05F41F81E05FA44000BEAC7 /* Assets.xcassets in Resources */,
 				A05F41F61E05FA44000BEAC7 /* Main.storyboard in Resources */,
+				A0E97B521ED87FA000957218 /* code.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,11 +378,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LW783GQGY7;
 				INFOPLIST_FILE = aurora/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.aurora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -389,11 +395,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = LW783GQGY7;
 				INFOPLIST_FILE = aurora/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.aurora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
