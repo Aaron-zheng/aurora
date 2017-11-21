@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		04606A04D8701ECC21ED1150 /* Pods_aurora.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302193004C415F488B3407B8 /* Pods_aurora.framework */; };
+		A006C5EE1FC1B0B500910A00 /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = A006C5ED1FC1B0B500910A00 /* data.xml */; };
 		A03C0F421EBE27C80085466D /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C0F411EBE27C80085466D /* PictureViewController.swift */; };
-		A03C9AAD1EC8ABA100C2227A /* data.xml in Resources */ = {isa = PBXBuildFile; fileRef = A03C9AAC1EC8ABA100C2227A /* data.xml */; };
 		A03C9AAF1EC8ACF300C2227A /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03C9AAE1EC8ACF300C2227A /* Country.swift */; };
 		A05F41F11E05FA44000BEAC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F41F01E05FA44000BEAC7 /* AppDelegate.swift */; };
 		A05F41F31E05FA44000BEAC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05F41F21E05FA44000BEAC7 /* ViewController.swift */; };
@@ -25,8 +25,8 @@
 		0377FFD58F8C40D78DBCFEB7 /* Pods-aurora.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aurora.release.xcconfig"; path = "Pods/Target Support Files/Pods-aurora/Pods-aurora.release.xcconfig"; sourceTree = "<group>"; };
 		302193004C415F488B3407B8 /* Pods_aurora.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aurora.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F3EC1BC9C8E309762981D8 /* Pods-aurora.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aurora.debug.xcconfig"; path = "Pods/Target Support Files/Pods-aurora/Pods-aurora.debug.xcconfig"; sourceTree = "<group>"; };
+		A006C5ED1FC1B0B500910A00 /* data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
 		A03C0F411EBE27C80085466D /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
-		A03C9AAC1EC8ABA100C2227A /* data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = data.xml; path = "../../../../Downloads/iOS-swift/极光/data.xml"; sourceTree = "<group>"; };
 		A03C9AAE1EC8ACF300C2227A /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		A05F41ED1E05FA44000BEAC7 /* aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05F41F01E05FA44000BEAC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		A03C9AAB1EC8AB6300C2227A /* data */ = {
 			isa = PBXGroup;
 			children = (
-				A03C9AAC1EC8ABA100C2227A /* data.xml */,
+				A006C5ED1FC1B0B500910A00 /* data.xml */,
 				A0E97B511ED87FA000957218 /* code.txt */,
 			);
 			name = data;
@@ -152,7 +152,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = sightcorner;
 				TargetAttributes = {
 					A05F41EC1E05FA44000BEAC7 = {
@@ -186,8 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A05F41FB1E05FA44000BEAC7 /* LaunchScreen.storyboard in Resources */,
-				A03C9AAD1EC8ABA100C2227A /* data.xml in Resources */,
 				A05F41F81E05FA44000BEAC7 /* Assets.xcassets in Resources */,
+				A006C5EE1FC1B0B500910A00 /* data.xml in Resources */,
 				A05F41F61E05FA44000BEAC7 /* Main.storyboard in Resources */,
 				A0E97B521ED87FA000957218 /* code.txt in Resources */,
 			);
@@ -288,7 +288,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -296,7 +298,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
@@ -338,7 +344,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -346,7 +354,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;

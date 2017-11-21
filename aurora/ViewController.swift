@@ -16,10 +16,19 @@ class ViewController: UIViewController {
     var countrys = Array<Country>()
     var dataSourceForTableView = Array<Country>()
     var codeDict = Dictionary<String, String>()
+    var loading: Bool = false
     
     fileprivate var currentNodeName: String!
     fileprivate var country: Country!
     fileprivate var tdIndex: Int! = 0
+    
+    @IBOutlet weak var refreshButton: UIButton!
+    
+    @IBAction func expandAll(_ sender: UIButton) {
+        self.requestAuroa(isDisplay: true)
+    }
+    
+    
     
     
     override func viewDidLoad() {
@@ -33,7 +42,11 @@ class ViewController: UIViewController {
     func setup() {
         self.view.backgroundColor = greyColor
         
-        
+        let img = UIImage(named: "ic_refresh_white")?.withRenderingMode(.alwaysTemplate)
+        refreshButton.setImage(img, for: .normal)
+        refreshButton.tintColor = UIColor.white
+        refreshButton.layer.cornerRadius = 25
+        refreshButton.backgroundColor = blueColor
     }
     
     
@@ -73,10 +86,6 @@ class ViewController: UIViewController {
         
         requestAuroa()
         
-        let country = Country();
-        country.name = "数据加载中..."
-        country.possibility = "极光概率"
-        self.dataSourceForTableView.append(country)
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -98,11 +107,23 @@ class ViewController: UIViewController {
 
     
     
-    func requestAuroa() {
+    func requestAuroa(isDisplay: Bool = false) {
+        
+        if loading {
+            return
+        }
+        
+        loading = true
+        
+        self.dataSourceForTableView.removeAll()
+        let country = Country();
+        country.name = "数据加载中..."
+        country.possibility = "极光概率"
+        self.dataSourceForTableView.append(country)
+        self.tableView.reloadData()
         
         Alamofire.request(auroaURL).validate().response { (response) in
             
-            self.dataSourceForTableView.removeAll()
             
             if response.error == nil {
                 self.performSuccessHandling(data: response.data)
@@ -115,7 +136,12 @@ class ViewController: UIViewController {
             for each in self.countrys {
                 
                 let possibility = self.getPosibilityOfAurora(latitude: NSDecimalNumber.init(string: each.latitude), longitude: NSDecimalNumber.init(string: each.longitude))
-//              let p = NSDecimalNumber.init(string: possibility)
+                if !isDisplay {
+                    let p = NSDecimalNumber.init(string: possibility)
+                    if p.compare(0).rawValue <= 0{
+                        continue
+                    }
+                }
                 each.possibility = possibility
                 if let chineseName = self.codeDict[each.code] {
                     each.name = chineseName
@@ -126,13 +152,14 @@ class ViewController: UIViewController {
             self.dataSourceForTableView.sort(by: { (c1, c2) -> Bool in
                 if c1.name == "5分钟实时预测" {
                     return true
-                } else if c2.name == "5分钟实时预测" {
+                } else if c2.name == "5分钟实时预测" || c2.name == "数据加载中..." {
                     return false
                 }
                 
                 return Int.init(c1.possibility)! > Int.init(c2.possibility)!
             })
             self.tableView.reloadData()
+            self.loading = false
         }
     }
     
@@ -253,6 +280,7 @@ extension ViewController: UITableViewDataSource {
     
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("dataSourceForTableView.count: " + dataSourceForTableView.count.description)
         return dataSourceForTableView.count
     }
     
