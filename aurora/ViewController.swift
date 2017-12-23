@@ -67,7 +67,6 @@ class ViewController: UIViewController {
                     let nameAndCode = line.components(separatedBy: "\t")
                     codeDict[nameAndCode[1]] = nameAndCode[0]
                 }
-//                print(codeDict)
                 
             } catch {
                 print("Error info: \(error)")
@@ -116,24 +115,19 @@ class ViewController: UIViewController {
         loading = true
         
         self.dataSourceForTableView.removeAll()
-        let country = Country();
-        country.name = "数据加载中..."
-        country.possibility = "极光概率"
-        self.dataSourceForTableView.append(country)
         self.tableView.reloadData()
         
         Alamofire.request(auroaURL).validate().response { (response) in
             
             
             if response.error == nil {
-                self.dataSourceForTableView.removeAll()
                 self.performSuccessHandling(data: response.data)
             } else {
                 self.performUnsuccessHandling()
             }
             
             self.cal()
-            print(self.countrys.count.description)
+            
             for each in self.countrys {
                 
                 let possibility = self.getPosibilityOfAurora(latitude: NSDecimalNumber.init(string: each.latitude), longitude: NSDecimalNumber.init(string: each.longitude))
@@ -151,12 +145,12 @@ class ViewController: UIViewController {
                 self.dataSourceForTableView.append(each)
             }
             self.dataSourceForTableView.sort(by: { (c1, c2) -> Bool in
-                if c1.name == "5分钟实时预测" {
+                if c1.name == "地区坐标" {
                     return true
-                } else if c2.name == "5分钟实时预测" || c2.name == "数据加载中..." {
+                } else if c2.name == "地区坐标" {
                     return false
                 }
-                
+
                 return Int.init(c1.possibility)! > Int.init(c2.possibility)!
             })
             self.tableView.reloadData()
@@ -222,11 +216,11 @@ class ViewController: UIViewController {
         }
         let possibility = Int(result)
         let display = Country()
-        display.name = "5分钟实时预测"
+        display.name = "地区坐标"
         display.possibility = "极光概率"
         self.dataSourceForTableView.append(display)
         let country = Country()
-        country.name = "最大概率（" + lat.description + ", " + log.description + "）"
+        country.name = "最大概率 (" + lat.description + ", " + log.description + ")"
         country.possibility = possibility.description
         self.dataSourceForTableView.append(country)
         print("max: " + possibility.description + " " + lat.description + " " + log.description)
@@ -274,6 +268,15 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if self.dataSourceForTableView.count <= 1 {
+            return "数据加载中..."
+        } else {
+            return "5分钟实时预测"
+        }
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -281,7 +284,6 @@ extension ViewController: UITableViewDataSource {
     
     @available(iOS 2.0, *)
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("dataSourceForTableView.count: " + dataSourceForTableView.count.description)
         return dataSourceForTableView.count
     }
     
