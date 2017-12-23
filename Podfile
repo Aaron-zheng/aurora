@@ -7,7 +7,6 @@ target 'aurora' do
   
 
   # Pods for auroa
-  #pod 'Kanna', '~> 2.1.0'
-  pod 'Alamofire', '~> 4.0'
-  pod 'Kingfisher', '~> 3.0'
+  pod 'Alamofire', '~> 4.5'
+  pod 'Kingfisher', '~> 4.0'
 end

@@ -153,8 +153,13 @@ class ViewController: UIViewController {
 
                 return Int.init(c1.possibility)! > Int.init(c2.possibility)!
             })
+            
             self.tableView.reloadData()
-            self.loading = false
+            
+            DispatchQueue.main.async {
+            
+                self.loading = false
+            }
         }
     }
     
@@ -214,7 +219,7 @@ class ViewController: UIViewController {
                 }
             }
         }
-        let possibility = Int(result)
+        let possibility = Int(truncating: result)
         let display = Country()
         display.name = "地区坐标"
         display.possibility = "极光概率"
@@ -276,6 +281,7 @@ extension ViewController: UITableViewDelegate {
             return "5分钟实时预测"
         }
     }
+    
     
 }
 
