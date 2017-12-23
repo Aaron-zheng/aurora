@@ -126,6 +126,7 @@ class ViewController: UIViewController {
             
             
             if response.error == nil {
+                self.dataSourceForTableView.removeAll()
                 self.performSuccessHandling(data: response.data)
             } else {
                 self.performUnsuccessHandling()

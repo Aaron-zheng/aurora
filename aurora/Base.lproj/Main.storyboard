@@ -60,7 +60,7 @@
                             <constraint firstItem="Chc-US-J4a" firstAttribute="top" secondItem="pnX-ZX-kZL" secondAttribute="bottom" constant="16" id="iCE-A5-y7B"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="信息" image="ic_assistant_white_36pt" id="daQ-RE-C3v"/>
+                    <tabBarItem key="tabBarItem" title="信息" image="ic_assistant_white" id="daQ-RE-C3v"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C33-6u-f1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -141,7 +141,7 @@
                             <constraint firstItem="2c4-bS-prv" firstAttribute="top" secondItem="fze-xS-fVC" secondAttribute="top" id="quJ-Zl-GQP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="图像" image="ic_broken_image_white_36pt" id="R95-zo-KFq"/>
+                    <tabBarItem key="tabBarItem" title="图像" image="ic_broken_image_white" id="R95-zo-KFq"/>
                     <connections>
                         <outlet property="northImageView" destination="aDs-Qh-ML1" id="Jeb-RT-kj3"/>
                         <outlet property="southImageView" destination="3Qb-sj-DHg" id="0rg-ci-w01"/>
@@ -227,7 +227,7 @@
                             <constraint firstItem="mcq-S1-OjO" firstAttribute="leading" secondItem="9Dx-bb-U8v" secondAttribute="leading" id="z2M-W6-2XX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="实时" image="ic_access_time_white_36pt" id="QHb-x0-HLd"/>
+                    <tabBarItem key="tabBarItem" title="实时" image="ic_access_time_white" id="QHb-x0-HLd"/>
                     <connections>
                         <outlet property="refreshButton" destination="7aL-tV-Pz3" id="0u3-rS-ioa"/>
                         <outlet property="tableView" destination="mcq-S1-OjO" id="8mW-1n-4qg"/>
@@ -259,9 +259,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_access_time_white_36pt" width="36" height="36"/>
-        <image name="ic_assistant_white_36pt" width="36" height="36"/>
-        <image name="ic_broken_image_white_36pt" width="36" height="36"/>
+        <image name="ic_access_time_white" width="24" height="24"/>
+        <image name="ic_assistant_white" width="24" height="24"/>
+        <image name="ic_broken_image_white" width="24" height="24"/>
         <image name="ic_refresh_white" width="24" height="24"/>
     </resources>
 </document>
