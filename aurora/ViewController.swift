@@ -104,7 +104,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    
+    private func getCurrent() -> String {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        let second = calendar.component(.second, from: date)
+        return hour.description + " " + minute.description + " " + second.description
+    }
     
     func requestAuroa(isDisplay: Bool = false) {
         
@@ -117,8 +124,10 @@ class ViewController: UIViewController {
         self.dataSourceForTableView.removeAll()
         self.tableView.reloadData()
         
+        print(self.getCurrent() + " 0")
+        
         Alamofire.request(auroaURL).validate().response { (response) in
-            
+            print(self.getCurrent() + " 1")
             
             if response.error == nil {
                 self.performSuccessHandling(data: response.data)
@@ -126,7 +135,11 @@ class ViewController: UIViewController {
                 self.performUnsuccessHandling()
             }
             
+            print(self.getCurrent() + " 2")
+            
             self.cal()
+            
+            print(self.getCurrent() + " 3")
             
             for each in self.countrys {
                 
@@ -144,6 +157,8 @@ class ViewController: UIViewController {
                 
                 self.dataSourceForTableView.append(each)
             }
+            print(self.getCurrent() + " 4")
+            
             self.dataSourceForTableView.sort(by: { (c1, c2) -> Bool in
                 if c1.name == "地区坐标" {
                     return true
@@ -154,7 +169,11 @@ class ViewController: UIViewController {
                 return Int.init(c1.possibility)! > Int.init(c2.possibility)!
             })
             
+            print(self.getCurrent() + " 5")
+            
             self.tableView.reloadData()
+            
+            print(self.getCurrent() + " 6")
             
             DispatchQueue.main.async {
             

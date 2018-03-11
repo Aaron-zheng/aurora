@@ -18,10 +18,17 @@ public let greyColor = UIColor(red: 238 / 255.0, green: 238 / 255.0, blue: 238 /
 public let darkColor = UIColor(red: 33/255, green: 33/255, blue: 33/255, alpha: 1)
 
 
+//    "http://services.swpc.noaa.gov/text/aurora-nowcast-map.txt"  + "?random=" + NSDate().timeIntervalSince1970.description
+//    "http://services.swpc.noaa.gov/images/animations/ovation-north/latest.jpg" + "?random=" + NSDate().timeIntervalSince1970.description
+//    "http://services.swpc.noaa.gov/images/animations/ovation-south/latest.jpg" + "?random=" + NSDate().timeIntervalSince1970.description
 
-public let auroaURL: String = "http://services.swpc.noaa.gov/text/aurora-nowcast-map.txt"  + "?random=" + NSDate().timeIntervalSince1970.description
-public let northLatestURL: String = "http://services.swpc.noaa.gov/images/animations/ovation-north/latest.jpg" + "?random=" + NSDate().timeIntervalSince1970.description
-public let southLatestURL: String = "http://services.swpc.noaa.gov/images/animations/ovation-south/latest.jpg" + "?random=" + NSDate().timeIntervalSince1970.description
+
+public let auroaURL: String = "http://7xn36r.com1.z0.glb.clouddn.com/aurora/aurora-nowcast-map.txt"  + "?random=" + NSDate().timeIntervalSince1970.description
+
+public let northLatestURL: String = "http://7xn36r.com1.z0.glb.clouddn.com/aurora/north.jpg"  + "?random=" + NSDate().timeIntervalSince1970.description
+
+public let southLatestURL: String = "http://7xn36r.com1.z0.glb.clouddn.com/aurora/south.jpg"  + "?random=" + NSDate().timeIntervalSince1970.description
+
 
 
 public class UIVerticalAlignLabel: UILabel {
@@ -42,10 +49,10 @@ public class UIVerticalAlignLabel: UILabel {
     /**
      顶部和左对齐的标签
      
-     - parameter bounds:        <#bounds description#>
-     - parameter numberOfLines: <#numberOfLines description#>
+     - parameter bounds:
+     - parameter numberOfLines:
      
-     - returns: <#return value description#>
+     - returns:
      */
     public override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         let rect = super.textRect(forBounds: bounds, limitedToNumberOfLines: numberOfLines)

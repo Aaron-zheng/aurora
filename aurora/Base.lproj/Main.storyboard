@@ -46,7 +46,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chc-US-J4a" customClass="UIVerticalAlignLabel" customModule="aurora" customModuleProvider="target">
                                 <rect key="frame" x="16" y="80" width="343" height="522"/>
-                                <string key="text">"实时"只展现，5分钟内可能出现极光的地区。（预测概率等于0的暂不显示，目前将会计算5分钟内244个地区的极光预测）  目前本作品应用了新的算法，之前的极光计算是按照地球收到的地磁指数来计算的，但是不同国家和地区的实际感受到的影响均是不同的，所以目前应用了新的算法来实现，不过目前这个算法还是测试版本，还会继续改进的。  作者是土生土长的广州人，曾经在新西兰打工度假中。  你在 App Store 对该作品的评论，会促使我努力开发下一个版本噢！另外如果你有一些想法或者创意，欢迎写邮件给我。  作者：Aaron 郑富成 邮箱：fucheng.zheng@gmail.com 博客：www.sightcorner.com 公众号：whvapp</string>
+                                <mutableString key="text">"实时"只展现，5分钟内可能出现极光的地区。（预测概率等于0的暂不显示，目前将会计算5分钟内244个地区的极光预测）  目前本作品应用了新的算法，之前的极光计算是按照地球收到的地磁指数来计算的，但是不同国家和地区的实际感受到的影响均是不同的，所以目前应用了新的算法来实现，不过目前这个算法还是测试版本，还会继续改进的。  你在 App Store 对该作品的评论，会促使我努力开发下一个版本噢！另外如果你有一些想法或者创意，欢迎写邮件给我。  作者的微信公众号：whvapp，欢迎和我聊下，或者读一下我之前写的新西兰打工旅行周记</mutableString>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                                             <constraint firstAttribute="width" secondItem="aDs-Qh-ML1" secondAttribute="height" multiplier="1:1" id="gUC-0t-vzH"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.53000000000000003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北半球极光能见度范围（红色代表大几率，绿色代表小几率）" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU3-wW-Uq1">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.53000000000000003" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="北半球极光能见度范围（深红代表大几率，浅绿代表小几率）" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU3-wW-Uq1">
                                         <rect key="frame" x="8" y="399" width="359" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="51N-k9-ZV2"/>
@@ -103,7 +103,7 @@
                                             <constraint firstAttribute="width" secondItem="3Qb-sj-DHg" secondAttribute="height" multiplier="1:1" id="lRu-Y0-teY"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南半球极光能见度范围（红色代表大几率，绿色代表小几率）" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mu1-b0-1SR">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="南半球极光能见度范围（深红代表大几率，浅绿代表小几率）" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mu1-b0-1SR">
                                         <rect key="frame" x="8" y="830" width="359" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3XW-tG-Xc8"/>
