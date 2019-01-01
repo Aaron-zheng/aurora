@@ -74,7 +74,7 @@ func setImage(imageView: UIImageView, url: String) {
     
     imageView.kf.setImage(with: URL(string: url),
                      placeholder: UIImage(named: "launch"),
-                     options: [.transition(.fade(0.1))],
+                     options: [.transition(.fade(0.2))],
                      progressBlock: { receivedSize, totalSize in
     },
                      completionHandler: { image, error, cacheType, imageURL in

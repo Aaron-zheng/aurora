@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="npI-s0-J7a">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="npI-s0-J7a">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Roboto-Light.ttf">
-            <string>Roboto-Light</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Gtn-8Y-T30">
@@ -32,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-1193" y="105"/>
         </scene>
-        <!--信息-->
+        <!--View Controller-->
         <scene sceneID="eQ8-ex-b0V">
             <objects>
                 <viewController id="w6h-tU-jle" sceneMemberID="viewController">
@@ -46,7 +41,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.54000002145767212" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Chc-US-J4a" customClass="UIVerticalAlignLabel" customModule="aurora" customModuleProvider="target">
                                 <rect key="frame" x="16" y="80" width="343" height="522"/>
-                                <mutableString key="text">"实时"只展现，5分钟内可能出现极光的地区。（预测概率等于0的暂不显示，目前将会计算5分钟内244个地区的极光预测）  目前本作品应用了新的算法，之前的极光计算是按照地球收到的地磁指数来计算的，但是不同国家和地区的实际感受到的影响均是不同的，所以目前应用了新的算法来实现，不过目前这个算法还是测试版本，还会继续改进的。  你在 App Store 对该作品的评论，会促使我努力开发下一个版本噢！另外如果你有一些想法或者创意，欢迎写邮件给我。  作者的微信公众号：whvapp，欢迎和我聊下，或者读一下我之前写的新西兰打工旅行周记</mutableString>
+                                <string key="text">"实时"只展现，5分钟内可能出现极光的地区。（预测概率等于0的暂不显示，目前将会计算5分钟内244个地区的极光预测）  目前本作品应用了新的算法，之前的极光计算是按照地球收到的地磁指数来计算的，但是不同国家和地区的实际感受到的影响均是不同的，所以目前应用了新的算法来实现，不过目前这个算法还是测试版本，还会继续改进的。  你在 App Store 对该作品的评论，会促使我努力开发下一个版本噢！另外如果你有一些想法或者创意，欢迎写邮件给我。  作者的微信公众号：whvapp，欢迎和我聊下，或者读一下我之前写的新西兰打工旅行周记</string>
                                 <fontDescription key="fontDescription" name="Roboto-Light" family="Roboto" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -60,12 +55,11 @@
                             <constraint firstItem="Chc-US-J4a" firstAttribute="top" secondItem="pnX-ZX-kZL" secondAttribute="bottom" constant="16" id="iCE-A5-y7B"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="信息" image="ic_assistant_white" id="daQ-RE-C3v"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C33-6u-f1H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-124" y="963"/>
+            <point key="canvasLocation" x="706" y="-233"/>
         </scene>
         <!--图像-->
         <scene sceneID="rG0-H9-hzw">
@@ -149,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TP-Vl-ftA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797.60000000000002" y="634.632683658171"/>
+            <point key="canvasLocation" x="92" y="939"/>
         </scene>
         <!--实时-->
         <scene sceneID="9Mt-du-Qlh">
@@ -175,7 +169,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.82999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="国家名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acB-ki-CNa">
-                                                    <rect key="frame" x="16" y="8" width="343" height="31.5"/>
+                                                    <rect key="frame" x="16" y="8" width="336" height="31.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -205,43 +199,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" alpha="0.54000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aL-tV-Pz3">
-                                <rect key="frame" x="311" y="506" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="3qy-bs-BKf"/>
-                                    <constraint firstAttribute="width" constant="48" id="TYK-qI-gCc"/>
-                                </constraints>
-                                <state key="normal" image="ic_refresh_white"/>
-                                <connections>
-                                    <action selector="expandAll:" destination="yM7-Xy-gTU" eventType="touchUpInside" id="3gW-UL-fLF"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="7aL-tV-Pz3" secondAttribute="trailing" constant="16" id="JQU-pB-Ohq"/>
                             <constraint firstItem="uD9-DY-lQe" firstAttribute="top" secondItem="mcq-S1-OjO" secondAttribute="bottom" id="dg5-Tg-k14"/>
                             <constraint firstItem="mcq-S1-OjO" firstAttribute="top" secondItem="M46-FM-yXy" secondAttribute="bottom" constant="-64" id="jZr-11-ovL"/>
                             <constraint firstAttribute="trailing" secondItem="mcq-S1-OjO" secondAttribute="trailing" id="kJF-EG-5BL"/>
-                            <constraint firstItem="uD9-DY-lQe" firstAttribute="top" secondItem="7aL-tV-Pz3" secondAttribute="bottom" constant="64" id="qfQ-3i-dMt"/>
                             <constraint firstItem="mcq-S1-OjO" firstAttribute="leading" secondItem="9Dx-bb-U8v" secondAttribute="leading" id="z2M-W6-2XX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="实时" image="ic_access_time_white" id="QHb-x0-HLd"/>
                     <connections>
-                        <outlet property="refreshButton" destination="7aL-tV-Pz3" id="0u3-rS-ioa"/>
                         <outlet property="tableView" destination="mcq-S1-OjO" id="8mW-1n-4qg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PDE-nZ-04Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762.39999999999998" y="-114.69265367316342"/>
+            <point key="canvasLocation" x="-770" y="939"/>
         </scene>
         <!--极光预测-->
         <scene sceneID="UGm-hj-7ie">
             <objects>
-                <tabBarController id="5mK-f4-9kJ" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="极光预测" id="dHV-Gy-bJj"/>
+                <tabBarController id="5mK-f4-9kJ" customClass="TabBarViewController" customModule="aurora" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="极光预测" id="dHV-Gy-bJj">
+                        <barButtonItem key="leftBarButtonItem" title="关于" id="s3u-a0-phJ">
+                            <connections>
+                                <segue destination="w6h-tU-jle" kind="show" id="WAR-Mc-XHg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="刷新" id="XzM-81-n97">
+                            <connections>
+                                <action selector="refreshData:" destination="5mK-f4-9kJ" id="Nlx-bW-BjP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="ydY-vA-yi2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -250,7 +241,6 @@
                     <connections>
                         <segue destination="yM7-Xy-gTU" kind="relationship" relationship="viewControllers" id="kKH-sL-puU"/>
                         <segue destination="F3w-OI-Nb7" kind="relationship" relationship="viewControllers" id="Wbh-LT-diP"/>
-                        <segue destination="w6h-tU-jle" kind="relationship" relationship="viewControllers" id="hEq-2d-S00"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0l-6V-QGw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -260,8 +250,6 @@
     </scenes>
     <resources>
         <image name="ic_access_time_white" width="24" height="24"/>
-        <image name="ic_assistant_white" width="24" height="24"/>
         <image name="ic_broken_image_white" width="24" height="24"/>
-        <image name="ic_refresh_white" width="24" height="24"/>
     </resources>
 </document>

@@ -22,34 +22,16 @@ class ViewController: UIViewController {
     fileprivate var country: Country!
     fileprivate var tdIndex: Int! = 0
     
-    @IBOutlet weak var refreshButton: UIButton!
-    
-    @IBAction func expandAll(_ sender: UIButton) {
-        self.requestAuroa(isDisplay: true)
+    override func viewDidAppear(_ animated: Bool) {
+        let tabBarViewController = self.parent as! TabBarViewController
+        tabBarViewController.tabBarDelegate = self
     }
-    
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setup()
         setupData()
-        
     }
-    
-    func setup() {
-        self.view.backgroundColor = greyColor
-        
-        let img = UIImage(named: "ic_refresh_white")?.withRenderingMode(.alwaysTemplate)
-        refreshButton.setImage(img, for: .normal)
-        refreshButton.tintColor = UIColor.white
-        refreshButton.layer.cornerRadius = 25
-        refreshButton.backgroundColor = blueColor
-    }
-    
-    
     
     
     private func readCode() {
@@ -124,22 +106,18 @@ class ViewController: UIViewController {
         self.dataSourceForTableView.removeAll()
         self.tableView.reloadData()
         
-        print(self.getCurrent() + " 0")
         
         Alamofire.request(auroaURL).validate().response { (response) in
-            print(self.getCurrent() + " 1")
+    
             
             if response.error == nil {
                 self.performSuccessHandling(data: response.data)
             } else {
                 self.performUnsuccessHandling()
             }
-            
-            print(self.getCurrent() + " 2")
-            
+    
             self.cal()
             
-            print(self.getCurrent() + " 3")
             
             for each in self.countrys {
                 
@@ -157,7 +135,8 @@ class ViewController: UIViewController {
                 
                 self.dataSourceForTableView.append(each)
             }
-            print(self.getCurrent() + " 4")
+            
+            
             
             self.dataSourceForTableView.sort(by: { (c1, c2) -> Bool in
                 if c1.name == "地区坐标" {
@@ -169,11 +148,8 @@ class ViewController: UIViewController {
                 return Int.init(c1.possibility)! > Int.init(c2.possibility)!
             })
             
-            print(self.getCurrent() + " 5")
             
             self.tableView.reloadData()
-            
-            print(self.getCurrent() + " 6")
             
             DispatchQueue.main.async {
             
@@ -297,8 +273,20 @@ extension ViewController: UITableViewDelegate {
         if self.dataSourceForTableView.count <= 1 {
             return "数据加载中..."
         } else {
-            return "5分钟实时预测"
+            return "5分钟实时预测\n地区坐标"
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 72
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let v = UIView()
+        let l = UILabel()
+        l.text = "5分钟实时预测\n地区坐标"
+        v.addSubview(l)
+        return v
     }
     
     
@@ -373,3 +361,8 @@ extension ViewController: XMLParserDelegate {
     }
 }
 
+extension ViewController: TabBarViewControllerDeletegate {
+    func refreshData() {
+        self.requestAuroa(isDisplay: true)
+    }
+}
