@@ -60,13 +60,13 @@ class ViewController: UIViewController {
     
     func setupData() {
         readCode()
-//        Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(ViewController.requestAuroa), userInfo: nil, repeats: true)
         let xmlParser = XMLParser(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "data", ofType: "xml")!))
         xmlParser?.delegate = self
         xmlParser?.parse()
         
         requestAuroa()
         
+        self.view.backgroundColor = UIColor.white
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -139,12 +139,6 @@ class ViewController: UIViewController {
             
             
             self.dataSourceForTableView.sort(by: { (c1, c2) -> Bool in
-                if c1.name == "地区坐标" {
-                    return true
-                } else if c2.name == "地区坐标" {
-                    return false
-                }
-
                 return Int.init(c1.possibility)! > Int.init(c2.possibility)!
             })
             
@@ -215,12 +209,8 @@ class ViewController: UIViewController {
             }
         }
         let possibility = Int(truncating: result)
-        let display = Country()
-        display.name = "地区坐标"
-        display.possibility = "极光概率"
-        self.dataSourceForTableView.append(display)
         let country = Country()
-        country.name = "最大概率 (" + lat.description + ", " + log.description + ")"
+        country.name = "坐标 (" + lat.description + ", " + log.description + ")"
         country.possibility = possibility.description
         self.dataSourceForTableView.append(country)
         print("max: " + possibility.description + " " + lat.description + " " + log.description)
@@ -269,24 +259,40 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        if self.dataSourceForTableView.count <= 1 {
-            return "数据加载中..."
-        } else {
-            return "5分钟实时预测\n地区坐标"
-        }
+        return ""
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 72
+        return 32
+        
     }
     
+    
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let v = UIView()
-        let l = UILabel()
-        l.text = "5分钟实时预测\n地区坐标"
-        v.addSubview(l)
-        return v
+        
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.tableView.frame.size.width, height: 32))
+        let leftLabel  = UILabel.init(frame: CGRect.init(x: 16, y: 0, width: self.tableView.frame.size.width, height: 32))
+        let rightLabel  = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: self.tableView.frame.size.width - 16, height: 32))
+        
+        
+        leftLabel.textAlignment = .left
+        leftLabel.numberOfLines = 0
+        rightLabel.textAlignment = .right
+        rightLabel.numberOfLines = 0
+        
+        if self.dataSourceForTableView.count <= 1 {
+            leftLabel.text = "数据加载中..."
+            rightLabel.text = ""
+        } else {
+            leftLabel.text = "地理坐标(实时5分钟)"
+            rightLabel.text = "极光概率"
+        }
+        headerView.backgroundColor = greyColor
+        headerView.addSubview(leftLabel)
+        headerView.addSubview(rightLabel)
+        
+        return headerView
     }
     
     
