@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
         
+        WXApi.registerApp("wxd59cf63cd39e8a41")
+        
         return true
     }
 

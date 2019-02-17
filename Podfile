@@ -8,6 +8,7 @@ target 'aurora' do
   
 
   # Pods for auroa
-  pod 'Alamofire', '~> 5.0.0.beta.1'
-  pod 'Kingfisher', '~> 4.8.1'
+  pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'WechatOpenSDK'
 end

@@ -29,6 +29,7 @@
 		A006C5ED1FC1B0B500910A00 /* data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = data.xml; sourceTree = "<group>"; };
 		A03C0F411EBE27C80085466D /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		A03C9AAE1EC8ACF300C2227A /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		A03F7F3B22182B830021DC30 /* WeixinShare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WeixinShare-Bridging-Header.h"; sourceTree = "<group>"; };
 		A05F41ED1E05FA44000BEAC7 /* aurora.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aurora.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05F41F01E05FA44000BEAC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A05F41F21E05FA44000BEAC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 				A05F41F71E05FA44000BEAC7 /* Assets.xcassets */,
 				A05F41F91E05FA44000BEAC7 /* LaunchScreen.storyboard */,
 				A05F41FC1E05FA44000BEAC7 /* Info.plist */,
+				A03F7F3B22182B830021DC30 /* WeixinShare-Bridging-Header.h */,
 			);
 			path = aurora;
 			sourceTree = "<group>";
@@ -137,7 +139,6 @@
 				A05F41EA1E05FA44000BEAC7 /* Frameworks */,
 				A05F41EB1E05FA44000BEAC7 /* Resources */,
 				971A47C25FFA0F221767F442 /* [CP] Embed Pods Frameworks */,
-				08540E94887EB6DB288553DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,21 +201,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		08540E94887EB6DB288553DE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-aurora/Pods-aurora-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		971A47C25FFA0F221767F442 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -414,6 +400,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.aurora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "aurora/WeixinShare-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -432,6 +419,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sightcorner.aurora;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "aurora/WeixinShare-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
