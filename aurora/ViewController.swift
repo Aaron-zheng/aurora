@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     }
     
     private func blur(background: UIView) {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = background.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation

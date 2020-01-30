@@ -43,7 +43,7 @@ class TabBarViewController: UITabBarController {
     func shareButtonHandler() {
         let img = getShareViewImage(v: self.view)
         let ext = WXImageObject()
-        ext.imageData = UIImageJPEGRepresentation(img, 1)
+        ext.imageData = img.jpegData(compressionQuality: 1)
         
         let message = WXMediaMessage()
         message.title = nil
@@ -55,7 +55,7 @@ class TabBarViewController: UITabBarController {
         img.draw(in: CGRect(x: 0, y: 0, width: 100, height: 50))
         let thumbImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        message.thumbData = UIImagePNGRepresentation(thumbImage!)
+        message.thumbData = thumbImage!.pngData()
         
         let req = SendMessageToWXReq()
         req.text = nil
